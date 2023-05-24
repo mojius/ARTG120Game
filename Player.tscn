@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpsk87sqm2jr2"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_7hyvu"]
+[ext_resource type="Texture2D" uid="uid://daqagidjpsmge" path="res://gameArt/Fox.png" id="2_ugdev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7mgcc"]
+size = Vector2(10, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8wifw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ugdev")
+}],
+"loop": true,
+"name": &"Still",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_7hyvu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_7mgcc")
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8wifw")
+animation = &"Still"
