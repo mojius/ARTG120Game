@@ -41,7 +41,7 @@ sources/0 = SubResource("TileSetAtlasSource_qtd7g")
 [node name="Gameworld" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("2_6fy2l")]
-position = Vector2(-28, -86)
+position = Vector2(0, -83)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_7sopj")
