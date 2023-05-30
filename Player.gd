@@ -33,6 +33,7 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("Jump"): #ui_accept
 		if CAN_JUMP == true && NUM_JUMPS > 0:
+			$PlayerSprite.play("Jump")
 			velocity.y = -JUMP_VELOCITY
 			NUM_JUMPS = NUM_JUMPS - 1
 			if is_on_wall() && CAN_WALL_JUMP && Input.is_action_pressed("Right"): #"ui_right"
@@ -53,19 +54,27 @@ func _physics_process(delta):
 	
 	if direction:
 		velocity.x += walk * delta
-		$PlayerSprite.play("Run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, STOP_FORCE * delta)
+		
+
+	if direction and is_on_floor():
+		$PlayerSprite.play("Run")
+	elif is_on_floor():
 		$PlayerSprite.play("Still")
+		
+	if !is_on_floor() and $PlayerSprite.is_playing() and $PlayerSprite.animation == ("Run"):
+		$PlayerSprite.stop()
 
 	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
 	
 	move_and_slide()
 	
 	#Wall Slide/Jump Detection
-	if is_on_wall() && CAN_WALL_JUMP && (Input.is_action_pressed("Right") || Input.is_action_pressed("Left")): #"ui_left", "ui_right"
+	if is_on_wall_only() && CAN_WALL_JUMP && (Input.is_action_pressed("Right") || Input.is_action_pressed("Left")): #"ui_left", "ui_right"
 		CAN_JUMP = true
 		NUM_JUMPS = MAX_NUM_JUMPS
+		$PlayerSprite.play("WallGrab")
 		if velocity.y >= 0:
 			velocity.y = min(velocity.y - WALL_SLIDE_ACCEL, MAX_WALL_SLIDE_SPEED)
 		else:
