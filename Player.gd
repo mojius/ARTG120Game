@@ -53,8 +53,10 @@ func _physics_process(delta):
 	
 	if direction:
 		velocity.x += walk * delta
+		$PlayerSprite.play("Run")
 	else:
 		velocity.x = move_toward(velocity.x, 0, STOP_FORCE * delta)
+		$PlayerSprite.play("Still")
 
 	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
 	
