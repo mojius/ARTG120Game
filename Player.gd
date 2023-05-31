@@ -20,11 +20,23 @@ const WALL_SLIDE_ACCEL = 7.5
 const MAX_WALL_SLIDE_SPEED = 120
 var CAN_WALL_JUMP = true
 
+#Float variables
+const FLOAT_DECEL = 2
+const MAX_FLOAT_DECEL = 35
+var isFloating = false
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += GRAVITY * delta
 		
+	if not is_on_floor():
+		if Input.is_action_pressed("Float"):
+			isFloating = true
+		if Input.is_action_just_released("Float"):
+			isFloating = false
+		if isFloating && velocity.y >= 0:
+			velocity.y = min(velocity.y + FLOAT_DECEL, MAX_FLOAT_DECEL)
 	
 	walk = WALK_FORCE * (Input.get_action_strength("Right") - Input.get_action_strength("Left")) #"ui_right","ui_left"
 	if is_on_floor():
