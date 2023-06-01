@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://xmakoftynuco"]
+[gd_scene load_steps=16 format=3 uid="uid://xmakoftynuco"]
 
 [ext_resource type="Texture2D" uid="uid://cexpgp51nbv2o" path="res://gameArt/Tileset.png" id="1_diyn0"]
 [ext_resource type="PackedScene" uid="uid://dpsk87sqm2jr2" path="res://Player.tscn" id="2_6fy2l"]
 [ext_resource type="Texture2D" uid="uid://bbbnxyvwvwvob" path="res://gameArt/TreeTiles.png" id="3_ma7mg"]
 [ext_resource type="Texture2D" uid="uid://bs554pfts2l8e" path="res://gameArt/LeafTiles.png" id="4_et8il"]
 [ext_resource type="Texture2D" uid="uid://c277tv7uchuja" path="res://gameArt/RockTiles.png" id="5_8mwph"]
+[ext_resource type="Texture2D" path="res://gameArt/Background3.png" id="6_4g15h"]
+[ext_resource type="Texture2D" path="res://gameArt/Background2.png" id="7_nbp2d"]
+[ext_resource type="Texture2D" path="res://gameArt/Background.png" id="8_c4rja"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6o84q"]
 
@@ -194,3 +197,24 @@ layer_1/y_sort_enabled = false
 layer_1/y_sort_origin = 0
 layer_1/z_index = -2
 layer_1/tile_data = PackedInt32Array(-786450, 65538, 1, -720914, 65538, 2, -851986, 65538, 1, -786449, 65538, 1, -720913, 65538, 2, -851985, 65538, 1, -786448, 65538, 1, -720912, 65538, 2, -851984, 65538, 1, -786447, 65538, 1, -720911, 65538, 2, -851983, 65538, 1, -786446, 131074, 1, -720910, 131074, 2, -851982, 131074, 1, -917519, 65538, 1, -917518, 131074, 1, -917520, 65538, 1, -917521, 65538, 1, -917522, 65538, 1, -983058, 65538, 0, -983057, 65538, 0, -983056, 65538, 0, -983059, 2, 0, -983055, 65538, 0, -983054, 131074, 0, -589845, 65538, 1, -524309, 65538, 2, -524310, 65538, 2, -589846, 65538, 1, -655382, 65538, 1, -655381, 65538, 1, -720918, 65538, 1, -720917, 65538, 1, -786454, 65538, 0, -655383, 65538, 1, -720919, 65538, 1, -786455, 65538, 0, -655384, 65538, 1, -720920, 65538, 1, -786456, 65538, 0, -655385, 65538, 1, -720921, 65538, 1, -786457, 65538, 0, -589848, 65538, 1, -589849, 65538, 1, -589850, 2, 1, -655386, 2, 1, -720922, 2, 1, -524313, 65538, 2, -524314, 2, 2, -524312, 65538, 2, -589847, 65538, 1, -524311, 65538, 2, -786458, 2, 0, -786453, 65538, 0, -786452, 131074, 0, -720916, 131074, 1, -655380, 131074, 1, -589844, 131074, 1, -524308, 131074, 2, -720915, 2, 2, -786451, 2, 1, -851987, 2, 1, -917523, 2, 1)
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -81)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture = ExtResource("6_4g15h")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -141)
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("7_nbp2d")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, -235)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("8_c4rja")
