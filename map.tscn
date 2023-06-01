@@ -1,17 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://xmakoftynuco"]
+[gd_scene load_steps=14 format=3 uid="uid://xmakoftynuco"]
 
 [ext_resource type="Texture2D" uid="uid://cexpgp51nbv2o" path="res://gameArt/Tileset.png" id="1_diyn0"]
 [ext_resource type="PackedScene" uid="uid://dpsk87sqm2jr2" path="res://Player.tscn" id="2_6fy2l"]
 [ext_resource type="Texture2D" uid="uid://bbbnxyvwvwvob" path="res://gameArt/TreeTiles.png" id="3_ma7mg"]
 [ext_resource type="Texture2D" uid="uid://bs554pfts2l8e" path="res://gameArt/LeafTiles.png" id="4_et8il"]
 [ext_resource type="Texture2D" uid="uid://c277tv7uchuja" path="res://gameArt/RockTiles.png" id="5_8mwph"]
-[ext_resource type="Texture2D" path="res://gameArt/Background3.png" id="6_4g15h"]
-[ext_resource type="Texture2D" path="res://gameArt/Background2.png" id="7_nbp2d"]
-[ext_resource type="Texture2D" path="res://gameArt/Background.png" id="8_c4rja"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6o84q"]
-
-[sub_resource type="ImageTexture" id="ImageTexture_8ckb1"]
+[ext_resource type="Texture2D" uid="uid://b132c66wlb7br" path="res://gameArt/Background3.png" id="6_4g15h"]
+[ext_resource type="Texture2D" uid="uid://o2exw5uqfpnh" path="res://gameArt/Background2.png" id="7_nbp2d"]
+[ext_resource type="Texture2D" uid="uid://bmrqpr7kssvo3" path="res://gameArt/Background.png" id="8_c4rja"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qtd7g"]
 texture = ExtResource("1_diyn0")
@@ -164,21 +160,6 @@ sources/3 = SubResource("TileSetAtlasSource_7gv62")
 
 [node name="Gameworld" type="Node2D"]
 
-[node name="Moving Platform" type="Node2D" parent="."]
-position = Vector2(411, 8)
-rotation = 0.0011369
-
-[node name="Platform" type="CharacterBody2D" parent="Moving Platform"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Moving Platform/Platform"]
-position = Vector2(-2.00006, 0.00227427)
-scale = Vector2(4.047, 0.806)
-shape = SubResource("RectangleShape2D_6o84q")
-
-[node name="Sprite2D" type="Sprite2D" parent="Moving Platform/Platform"]
-scale = Vector2(14.909, 14.909)
-texture = SubResource("ImageTexture_8ckb1")
-
 [node name="Player" parent="." instance=ExtResource("2_6fy2l")]
 position = Vector2(0, -83)
 
@@ -211,6 +192,7 @@ position = Vector2(0, -141)
 motion_scale = Vector2(0.5, 0.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(-4, 2)
 texture = ExtResource("7_nbp2d")
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]

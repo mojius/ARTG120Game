@@ -41,8 +41,10 @@ func _physics_process(delta):
 		if Input.is_action_pressed("Float"):
 			$PlayerSprite.play("Glide")
 			isFloating = true
-		if Input.is_action_just_released("Float"):
+		else:
 			isFloating = false
+		#if Input.is_action_just_released("Float"):
+			#isFloating = false
 		if isFloating && velocity.y >= 0:
 			velocity.y = FLOAT_DECEL #min(velocity.y + FLOAT_DECEL, MAX_FLOAT_DECEL)
 	
