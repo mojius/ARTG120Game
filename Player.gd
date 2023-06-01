@@ -16,8 +16,9 @@ var MAX_NUM_JUMPS = 1
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 
 # Wall jump variables
-const WALL_SLIDE_ACCEL = 7.5
-const MAX_WALL_SLIDE_SPEED = 120
+#const WALL_SLIDE_ACCEL = 2.5
+#const MAX_WALL_SLIDE_SPEED = 10
+const WALL_SLIDE_SPEED = 20
 var CAN_WALL_JUMP = true
 
 #Float variables
@@ -25,10 +26,16 @@ const FLOAT_DECEL = 40
 #const MAX_FLOAT_DECEL = 35
 var isFloating = false
 
+# BUGS #
+# Fast wall climb
+# If you mess around a wall while floating it sometimes keeps you in a glide state even if your not pressing ctrl, pressing ctrl undoes it
+
 func _physics_process(delta):
 	# Add the gravity.
-	if not is_on_floor():
+	print_debug(isFloating)
+	if not is_on_floor() && not is_on_wall_only():
 		velocity.y += GRAVITY * delta
+		NUM_JUMPS = NUM_JUMPS - 1
 		
 	if not is_on_floor():
 		if Input.is_action_pressed("Float"):
@@ -49,11 +56,13 @@ func _physics_process(delta):
 			velocity.y = -JUMP_VELOCITY
 			NUM_JUMPS = NUM_JUMPS - 1
 			if is_on_wall() && CAN_WALL_JUMP && Input.is_action_pressed("Right"): #"ui_right"
+				#NUM_JUMPS = MAX_NUM_JUMPS
 				velocity.x = -WALK_MAX_SPEED
-				NUM_JUMPS = NUM_JUMPS - 1
+				#NUM_JUMPS = NUM_JUMPS - 1
 			elif is_on_wall() && CAN_WALL_JUMP && Input.is_action_pressed("Left"): #"ui_left"
+				#NUM_JUMPS = MAX_NUM_JUMPS
 				velocity.x = WALK_MAX_SPEED
-				NUM_JUMPS = NUM_JUMPS - 1
+				#NUM_JUMPS = NUM_JUMPS - 1
 	
 	if velocity.y < 0 and Input.is_action_just_pressed("Jump"):
 		$PlayerSprite.play("Jump")
@@ -94,7 +103,8 @@ func _physics_process(delta):
 		NUM_JUMPS = MAX_NUM_JUMPS
 		$PlayerSprite.play("WallGrab")
 		if velocity.y >= 0:
-			velocity.y = min(velocity.y - WALL_SLIDE_ACCEL, MAX_WALL_SLIDE_SPEED)
+			#velocity.y = min(velocity.y - WALL_SLIDE_ACCEL, MAX_WALL_SLIDE_SPEED)
+			velocity.y = WALL_SLIDE_SPEED
 		else:
 			velocity.y += GRAVITY * delta
 	else:
