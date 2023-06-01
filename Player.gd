@@ -5,7 +5,7 @@ extends CharacterBody2D
 const WALK_MAX_SPEED = 125
 const STOP_FORCE = 900
 const GRAVITY = 400.0
-const JUMP_VELOCITY = 200
+const JUMP_VELOCITY = 220
 
 var walk = 0
 
@@ -32,9 +32,11 @@ func _physics_process(delta):
 		
 	if not is_on_floor():
 		if Input.is_action_pressed("Float"):
+			$PlayerSprite.play("Glide")
 			isFloating = true
 		if Input.is_action_just_released("Float"):
 			isFloating = false
+			
 		if isFloating && velocity.y >= 0:
 			velocity.y = min(velocity.y + FLOAT_DECEL, MAX_FLOAT_DECEL)
 	
@@ -45,7 +47,6 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("Jump"): #ui_accept
 		if CAN_JUMP == true && NUM_JUMPS > 0:
-			$PlayerSprite.play("Jump")
 			velocity.y = -JUMP_VELOCITY
 			NUM_JUMPS = NUM_JUMPS - 1
 			if is_on_wall() && CAN_WALL_JUMP && Input.is_action_pressed("Right"): #"ui_right"
@@ -54,7 +55,13 @@ func _physics_process(delta):
 			elif is_on_wall() && CAN_WALL_JUMP && Input.is_action_pressed("Left"): #"ui_left"
 				velocity.x = WALK_MAX_SPEED
 				NUM_JUMPS = NUM_JUMPS - 1
-
+	
+	if velocity.y < 0 and Input.is_action_just_pressed("Jump"):
+		$PlayerSprite.play("Jump")
+	elif !is_on_floor() and !isFloating:
+		$PlayerSprite.play("Fall")
+		
+	
 	if Input.is_action_just_released("Jump"): #ui_accept
 		jump_cut()
 	# Get the input direction and handle the movement/deceleration.
