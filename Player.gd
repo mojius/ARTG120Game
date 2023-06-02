@@ -32,7 +32,7 @@ var isFloating = false
 
 func _physics_process(delta):
 	# Add the gravity.
-	print_debug(isFloating)
+	#print_debug(isFloating)
 	if not is_on_floor() && not is_on_wall_only():
 		velocity.y += GRAVITY * delta
 		NUM_JUMPS = NUM_JUMPS - 1
