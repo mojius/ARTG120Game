@@ -1,3 +1,5 @@
+ColorRect
+SubViewport
 RigidBody2D
 PhysicalBone2D
 Sprite2D
