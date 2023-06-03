@@ -1,6 +1,7 @@
 res://map.tscn
 res://Player.tscn
-res://Player.gdshader
+res://dash.tscn
+res://dash.gd
+res://Dash.gd
 res://Player.gd
-res://Mask.gdshader
-res://Sprite.gdshader
+res://Dash.tscn
