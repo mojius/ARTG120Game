@@ -1,11 +1,12 @@
-[gd_scene load_steps=22 format=3 uid="uid://dpsk87sqm2jr2"]
+[gd_scene load_steps=23 format=3 uid="uid://dpsk87sqm2jr2"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_7hyvu"]
 [ext_resource type="Texture2D" uid="uid://cqmm83l88trel" path="res://gameArt/Fox3.png" id="2_hiqao"]
 [ext_resource type="Texture2D" uid="uid://daqagidjpsmge" path="res://gameArt/Fox.png" id="2_ugdev"]
 [ext_resource type="Texture2D" uid="uid://yovg0q0l3vxm" path="res://gameArt/Fox2.png" id="3_g73h7"]
 [ext_resource type="Texture2D" uid="uid://ci8ctqx5oavjb" path="res://gameArt/RunParticle.png" id="5_ess2i"]
-[ext_resource type="PackedScene" uid="uid://cmihernf74gvh" path="res://Dash.tscn" id="6_ws04n"]
+[ext_resource type="Script" path="res://Sounds.gd" id="6_cyue1"]
+[ext_resource type="AudioStream" uid="uid://by1ycbslwgior" path="res://gameAudio/DirtWalk.wav" id="7_qnvg6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oy8pl"]
 atlas = ExtResource("2_ugdev")
@@ -160,4 +161,9 @@ zoom = Vector2(3, 3)
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_7mgcc")
 
-[node name="Dash" parent="." instance=ExtResource("6_ws04n")]
+[node name="Sounds" type="Node" parent="."]
+script = ExtResource("6_cyue1")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("7_qnvg6")
+max_polyphony = 2

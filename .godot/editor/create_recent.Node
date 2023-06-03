@@ -1,4 +1,6 @@
-Timer
+AudioStreamPlayer
+AudioStreamPlayer2D
+Node
 GPUParticles2D
 Sprite2D
 SubViewport
