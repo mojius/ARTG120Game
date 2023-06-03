@@ -1,13 +1,13 @@
 2a60927148abd1d33b818b535e306557
-::res://::1685827569
+::res://::1685828072
 Dash.gd::GDScript::-1::1685761041::0::1::::<>Node2D<>::
 Dash.tscn::PackedScene::5632055588450550961::1685761041::0::1::::<><>::res://Dash.gd
 icon.svg::CompressedTexture2D::3604967623761785578::1684969837::1685827569::1::::<><>::
-map.tscn::PackedScene::1639134538609314474::1685827524::0::1::::<><>::uid://dpsk87sqm2jr2<>uid://b20fsnpflxg6v<>uid://bbbnxyvwvwvob<>uid://bs554pfts2l8e<>uid://c277tv7uchuja<>uid://b132c66wlb7br<>uid://c14enyrjiduls<>uid://4aqf3lhtptkp<>uid://cdmydj14d1j80<>uid://o2exw5uqfpnh<>uid://bmrqpr7kssvo3
+map.tscn::PackedScene::1639134538609314474::1685828072::0::1::::<><>::uid://dpsk87sqm2jr2<>uid://b20fsnpflxg6v<>uid://bbbnxyvwvwvob<>uid://bs554pfts2l8e<>uid://c277tv7uchuja<>uid://b132c66wlb7br<>uid://c14enyrjiduls<>uid://4aqf3lhtptkp<>uid://cdmydj14d1j80<>uid://o2exw5uqfpnh<>uid://bmrqpr7kssvo3<>uid://3k0m2ghq27r0
 Player.gd::GDScript::-1::1685761041::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::8249921315647150233::1685769658::0::1::::<><>::res://Player.gd<>uid://cqmm83l88trel<>uid://daqagidjpsmge<>uid://yovg0q0l3vxm<>uid://ci8ctqx5oavjb<>res://Sounds.gd<>uid://cmihernf74gvh<>uid://by1ycbslwgior
+Player.tscn::PackedScene::8249921315647150233::1685828050::0::1::::<><>::res://Player.gd<>uid://cqmm83l88trel<>uid://daqagidjpsmge<>uid://yovg0q0l3vxm<>uid://ci8ctqx5oavjb<>res://Sounds.gd<>uid://cmihernf74gvh<>uid://by1ycbslwgior
 Sounds.gd::GDScript::-1::1685761210::0::1::::<>Node<>::
-::res://gameArt/::1685827617
+::res://gameArt/::1685829923
 Background2.png::CompressedTexture2D::1038667154311085605::1685654274::1685654274::1::::<><>::
 Background3.png::CompressedTexture2D::4270777802915267819::1685746984::1685746984::1::::<><>::
 Background.png::CompressedTexture2D::3264780430771177020::1685654274::1685654274::1::::<><>::
@@ -19,6 +19,7 @@ Fox2.png::CompressedTexture2D::1714720646433474334::1685483413::1685483309::1:::
 Fox3.png::CompressedTexture2D::5921424422946383967::1685573025::1685573083::1::::<><>::
 Fox.png::CompressedTexture2D::7192303235158588768::1685482251::1685482302::1::::<><>::
 LeafTiles.png::CompressedTexture2D::3713625296068389546::1685747859::1685747859::1::::<><>::
+Mushrooms.png::CompressedTexture2D::755862589038486698::1685829923::1685829923::1::::<><>::
 Rocks2.png::CompressedTexture2D::1987472181491333395::1685827617::1685827617::1::::<><>::
 RockTiles.png::CompressedTexture2D::6735978260931483226::1685577124::1685577124::1::::<><>::
 RunParticle.png::CompressedTexture2D::5402632823730059623::1685748244::1685748247::1::::<><>::
