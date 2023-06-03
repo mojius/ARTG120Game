@@ -1,7 +1,10 @@
 res://map.tscn
 res://Player.tscn
+<<<<<<< HEAD
 res://dash.tscn
 res://dash.gd
 res://Dash.gd
 res://Player.gd
+=======
+>>>>>>> parent of 4e27628 (reverted to previous version)
 res://Dash.tscn
