@@ -1,7 +1,2 @@
 res://map.tscn
 res://Player.tscn
-res://Player.gdshader
-res://Player.gd
-res://Mask.gdshader
-res://Sprite.gdshader
-res://Sounds.gd

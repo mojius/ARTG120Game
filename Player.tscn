@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://yovg0q0l3vxm" path="res://gameArt/Fox2.png" id="3_g73h7"]
 [ext_resource type="Texture2D" uid="uid://ci8ctqx5oavjb" path="res://gameArt/RunParticle.png" id="5_ess2i"]
 [ext_resource type="Script" path="res://Sounds.gd" id="6_cyue1"]
-[ext_resource type="PackedScene" path="res://Dash.tscn" id="6_ws04n"]
+[ext_resource type="PackedScene" uid="uid://cmihernf74gvh" path="res://Dash.tscn" id="6_ws04n"]
 [ext_resource type="AudioStream" uid="uid://by1ycbslwgior" path="res://gameAudio/DirtWalk.wav" id="7_qnvg6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oy8pl"]
