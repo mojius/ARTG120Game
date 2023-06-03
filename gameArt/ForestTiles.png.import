@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cexpgp51nbv2o"
-path="res://.godot/imported/Tileset.png-f84733b479a7c23df0a2c745b0b1029d.ctex"
+uid="uid://4aqf3lhtptkp"
+path="res://.godot/imported/ForestTiles.png-762d9dbe148a577681140522c6223521.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://gameArt/Tileset.png"
-dest_files=["res://.godot/imported/Tileset.png-f84733b479a7c23df0a2c745b0b1029d.ctex"]
+source_file="res://gameArt/ForestTiles.png"
+dest_files=["res://.godot/imported/ForestTiles.png-762d9dbe148a577681140522c6223521.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

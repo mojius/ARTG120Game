@@ -32,7 +32,7 @@ var isFloating = false
 
 func _physics_process(delta):
 	# Add the gravity.
-	print_debug(isFloating)
+	#print_debug(isFloating)
 	if not is_on_floor() && not is_on_wall_only():
 		velocity.y += GRAVITY * delta
 		NUM_JUMPS = NUM_JUMPS - 1
@@ -41,8 +41,10 @@ func _physics_process(delta):
 		if Input.is_action_pressed("Float"):
 			$PlayerSprite.play("Glide")
 			isFloating = true
-		if Input.is_action_just_released("Float"):
+		else:
 			isFloating = false
+		#if Input.is_action_just_released("Float"):
+			#isFloating = false
 		if isFloating && velocity.y >= 0:
 			velocity.y = FLOAT_DECEL #min(velocity.y + FLOAT_DECEL, MAX_FLOAT_DECEL)
 	
@@ -68,6 +70,7 @@ func _physics_process(delta):
 		$PlayerSprite.play("Jump")
 	elif !is_on_floor() and !isFloating:
 		$PlayerSprite.play("Fall")
+		$PlayerSprite/GPUParticles2D.emitting = false
 		
 	
 	if Input.is_action_just_released("Jump"): #ui_accept
@@ -81,17 +84,22 @@ func _physics_process(delta):
 	
 	if direction:
 		velocity.x += walk * delta
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, STOP_FORCE * delta)
 		
-
+	
+	
 	if direction and is_on_floor():
 		$PlayerSprite.play("Run")
+		$PlayerSprite/GPUParticles2D.emitting = true
 	elif is_on_floor():
 		$PlayerSprite.play("Still")
+		$PlayerSprite/GPUParticles2D.emitting = false
 		
 	if !is_on_floor() and $PlayerSprite.is_playing() and $PlayerSprite.animation == ("Run"):
 		$PlayerSprite.stop()
+		$PlayerSprite/GPUParticles2D.emitting = false
 
 	velocity.x = clamp(velocity.x, -WALK_MAX_SPEED, WALK_MAX_SPEED)
 	

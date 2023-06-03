@@ -1,4 +1,11 @@
+GPUParticles2D
 Sprite2D
+SubViewport
+ColorRect
+RigidBody2D
+PhysicalBone2D
+ParallaxBackground
+ParallaxLayer
 CollisionShape2D
 CharacterBody2D
 Node2D
