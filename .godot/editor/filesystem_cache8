@@ -1,15 +1,12 @@
 2a60927148abd1d33b818b535e306557
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 641c627 (Revert "Merge branch 'master' of https://github.com/mojius/ARTG120Game")
-::res://::1685755790
+::res://::1685760557
+Dash.gd::GDScript::-1::1685759375::0::1::::<>Node2D<>::
+Dash.tscn::PackedScene::5632055588450550961::1685760430::0::1::::<><>::res://Dash.gd
 icon.svg::CompressedTexture2D::3604967623761785578::1684969954::1684970404::1::::<><>::
-map.tscn::PackedScene::1639134538609314474::1685754246::0::1::::<><>::uid://dpsk87sqm2jr2<>uid://b20fsnpflxg6v<>uid://bbbnxyvwvwvob<>uid://bs554pfts2l8e<>uid://c277tv7uchuja<>uid://b132c66wlb7br<>uid://c14enyrjiduls<>uid://4aqf3lhtptkp<>uid://o2exw5uqfpnh<>uid://bmrqpr7kssvo3
-Player.gd::GDScript::-1::1685754204::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::8249921315647150233::1685754246::0::1::::<><>::res://Player.gd<>uid://cqmm83l88trel<>uid://daqagidjpsmge<>uid://yovg0q0l3vxm<>uid://ci8ctqx5oavjb
-Dash.gd::GDScript::-1::1685755790::0::1::::<>Node2D<>::
-node_2d.tscn::PackedScene::5632055588450550961::1685755790::0::1::::<><>::res://Dash.gd
+map.tscn::PackedScene::1639134538609314474::1685760534::0::1::::<><>::uid://dpsk87sqm2jr2<>uid://b20fsnpflxg6v<>uid://bbbnxyvwvwvob<>uid://bs554pfts2l8e<>uid://c277tv7uchuja<>uid://b132c66wlb7br<>uid://c14enyrjiduls<>uid://4aqf3lhtptkp<>uid://o2exw5uqfpnh<>uid://bmrqpr7kssvo3
+Player.gd::GDScript::-1::1685759375::0::1::::<>CharacterBody2D<>::
+Player.tscn::PackedScene::8249921315647150233::1685760492::0::1::::<><>::res://Player.gd<>uid://cqmm83l88trel<>uid://daqagidjpsmge<>uid://yovg0q0l3vxm<>uid://ci8ctqx5oavjb<>uid://cmihernf74gvh
+Sounds.gd::GDScript::-1::1685760534::0::1::::<>Node<>::
 ::res://gameArt/::1685754204
 Background2.png::CompressedTexture2D::1038667154311085605::1685754204::1685754204::1::::<><>::
 Background3.png::CompressedTexture2D::4270777802915267819::1685754204::1685754204::1::::<><>::
@@ -27,35 +24,5 @@ Spider.png::CompressedTexture2D::348232043028012179::1685582873::1685582873::1::
 Squirrel.png::CompressedTexture2D::3245043550479792112::1685582873::1685582873::1::::<><>::
 TreeTiles.png::CompressedTexture2D::2459505593280797873::1685754204::1685582873::1::::<><>::
 UpperCanopyTileset.png::CompressedTexture2D::4333465341243997203::1685754204::1685754204::1::::<><>::
-<<<<<<< HEAD
-=======
-::res://::1685758701
-Dash.gd::GDScript::-1::1685758649::0::1::::<>Node2D<>::
-Dash.tscn::PackedScene::5632055588450550961::1685758649::0::1::::<><>::res://Dash.gd
-icon.svg::CompressedTexture2D::3604967623761785578::1684969775::1685667514::1::::<><>::
-map.tscn::PackedScene::1639134538609314474::1685757144::0::1::::<><>::uid://dpsk87sqm2jr2<>uid://b20fsnpflxg6v<>uid://bbbnxyvwvwvob<>uid://bs554pfts2l8e<>uid://c277tv7uchuja<>uid://b132c66wlb7br<>uid://c14enyrjiduls<>uid://4aqf3lhtptkp<>uid://o2exw5uqfpnh<>uid://bmrqpr7kssvo3
-Player.gd::GDScript::-1::1685758649::0::1::::<>CharacterBody2D<>::
-Player.tscn::PackedScene::8249921315647150233::1685758649::0::1::::<><>::res://Player.gd<>uid://cqmm83l88trel<>uid://daqagidjpsmge<>uid://yovg0q0l3vxm<>uid://ci8ctqx5oavjb<>uid://cmihernf74gvh
-Sounds.gd::GDScript::-1::1685755373::0::1::::<>Node<>::
-::res://gameArt/::1685753701
-Background2.png::CompressedTexture2D::1038667154311085605::1685667496::1685667496::1::::<><>::
-Background3.png::CompressedTexture2D::4270777802915267819::1685753701::1685667496::1::::<><>::
-Background.png::CompressedTexture2D::3264780430771177020::1685667496::1685667496::1::::<><>::
-Bear.png::CompressedTexture2D::2921872979447006197::1685667496::1685667496::1::::<><>::
-ForestFoliageTiles.png::CompressedTexture2D::6657885627376436560::1685753701::1685753701::1::::<><>::
-ForestTiles.png::CompressedTexture2D::2036458354347429879::1685753701::1685753701::1::::<><>::
-Fox2.png::CompressedTexture2D::1714720646433474334::1685667496::1685667496::1::::<><>::
-Fox3.png::CompressedTexture2D::5921424422946383967::1685667496::1685667496::1::::<><>::
-Fox.png::CompressedTexture2D::7192303235158588768::1685667496::1685335997::1::::<><>::
-LeafTiles.png::CompressedTexture2D::3713625296068389546::1685753701::1685667496::1::::<><>::
-RockTiles.png::CompressedTexture2D::6735978260931483226::1685667496::1685667496::1::::<><>::
-RunParticle.png::CompressedTexture2D::5402632823730059623::1685753701::1685753701::1::::<><>::
-Spider.png::CompressedTexture2D::348232043028012179::1685667496::1685667496::1::::<><>::
-Squirrel.png::CompressedTexture2D::3245043550479792112::1685667496::1685667496::1::::<><>::
-TreeTiles.png::CompressedTexture2D::2459505593280797873::1685753701::1685667496::1::::<><>::
-UpperCanopyTileset.png::CompressedTexture2D::4333465341243997203::1685753701::1685753701::1::::<><>::
-::res://gameAudio/::1685754904
-DirtWalk.wav::AudioStreamWAV::4126087612884901629::1685754904::1685754904::1::::<><>::
->>>>>>> parent of 4e27628 (reverted to previous version)
-=======
->>>>>>> parent of 641c627 (Revert "Merge branch 'master' of https://github.com/mojius/ARTG120Game")
+::res://gameAudio/::1685760534
+DirtWalk.wav::AudioStreamWAV::4126087612884901629::1685760534::1685760534::1::::<><>::
