@@ -1,5 +1,8 @@
 2a60927148abd1d33b818b535e306557
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 641c627 (Revert "Merge branch 'master' of https://github.com/mojius/ARTG120Game")
 ::res://::1685755790
 icon.svg::CompressedTexture2D::3604967623761785578::1684969954::1684970404::1::::<><>::
 map.tscn::PackedScene::1639134538609314474::1685754246::0::1::::<><>::uid://dpsk87sqm2jr2<>uid://b20fsnpflxg6v<>uid://bbbnxyvwvwvob<>uid://bs554pfts2l8e<>uid://c277tv7uchuja<>uid://b132c66wlb7br<>uid://c14enyrjiduls<>uid://4aqf3lhtptkp<>uid://o2exw5uqfpnh<>uid://bmrqpr7kssvo3
@@ -24,6 +27,7 @@ Spider.png::CompressedTexture2D::348232043028012179::1685582873::1685582873::1::
 Squirrel.png::CompressedTexture2D::3245043550479792112::1685582873::1685582873::1::::<><>::
 TreeTiles.png::CompressedTexture2D::2459505593280797873::1685754204::1685582873::1::::<><>::
 UpperCanopyTileset.png::CompressedTexture2D::4333465341243997203::1685754204::1685754204::1::::<><>::
+<<<<<<< HEAD
 =======
 ::res://::1685758701
 Dash.gd::GDScript::-1::1685758649::0::1::::<>Node2D<>::
@@ -53,3 +57,5 @@ UpperCanopyTileset.png::CompressedTexture2D::4333465341243997203::1685753701::16
 ::res://gameAudio/::1685754904
 DirtWalk.wav::AudioStreamWAV::4126087612884901629::1685754904::1685754904::1::::<><>::
 >>>>>>> parent of 4e27628 (reverted to previous version)
+=======
+>>>>>>> parent of 641c627 (Revert "Merge branch 'master' of https://github.com/mojius/ARTG120Game")

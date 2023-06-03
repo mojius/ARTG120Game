@@ -1,10 +1,16 @@
 res://map.tscn
 res://Player.tscn
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 641c627 (Revert "Merge branch 'master' of https://github.com/mojius/ARTG120Game")
 res://dash.tscn
 res://dash.gd
 res://Dash.gd
 res://Player.gd
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 4e27628 (reverted to previous version)
+=======
+>>>>>>> parent of 641c627 (Revert "Merge branch 'master' of https://github.com/mojius/ARTG120Game")
 res://Dash.tscn
