@@ -166,3 +166,4 @@ script = ExtResource("6_cyue1")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("7_qnvg6")
+max_polyphony = 2
