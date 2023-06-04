@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bn61yorajna14"]
+
+[ext_resource type="Script" path="res://Bear.gd" id="1_w23xk"]
+[ext_resource type="Texture2D" uid="uid://bhvm26f0o8wcr" path="res://gameArt/Bear.png" id="2_keaf1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2fvub"]
+radius = 8.0
+
+[node name="Bear" type="Area2D"]
+monitoring = false
+script = ExtResource("1_w23xk")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_keaf1")
+hframes = 52
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2fvub")

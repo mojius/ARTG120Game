@@ -12,10 +12,10 @@
 position = Vector2(0, 80)
 
 [node name="BreakableRock2" parent="." instance=ExtResource("2_ux27d")]
-position = Vector2(0, 162)
+position = Vector2(32, 80)
 
 [node name="BreakableRock3" parent="." instance=ExtResource("2_ux27d")]
-position = Vector2(0, 121)
+position = Vector2(-32, 80)
 
 [node name="ScratcherItem" parent="." instance=ExtResource("3_66mci")]
-position = Vector2(0, 46)
+position = Vector2(-42, 56)

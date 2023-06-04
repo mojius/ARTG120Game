@@ -162,17 +162,17 @@ func _on_item_collect_area_area_entered(area):
 			area.collect()
 			
 	if area.isNPC == true:
-		if area.name == "bear":
+		if area.NPCname == "bear":
 			if hasScratcher:
 				area.goodDialog()
 			else:
 				area.questDialog()
-		if area.name == "spider":
+		if area.NPCname == "spider":
 			if hasSack:
 				area.goodDialog()
 			else:
 				area.questDialog()
-		if area.name == "squirrel":
+		if area.NPCname == "squirrel":
 			if hasAcorn:
 				area.goodDialog()
 			else:
