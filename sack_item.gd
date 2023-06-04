@@ -1,6 +1,6 @@
 extends Area2D
 
-
+var isItem = true
 var itemName = "sack"
 
 func collect():

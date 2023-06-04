@@ -150,13 +150,30 @@ func jump_cut():
 
 
 func _on_item_collect_area_area_entered(area):
-	if area.itemName == "acorn":
-		hasAcorn = true
-		area.collect()
-	elif area.itemName == "sack":
-		hasSack = true
-		area.collect()
-	elif area.itemName == "scratcher":
-		hasScratcher = true
-		area.collect()
-		
+	if area.isItem == true:
+		if area.itemName == "acorn":
+			hasAcorn = true
+			area.collect()
+		elif area.itemName == "sack":
+			hasSack = true
+			area.collect()
+		elif area.itemName == "scratcher":
+			hasScratcher = true
+			area.collect()
+			
+	if area.isNPC == true:
+		if area.name == "bear":
+			if hasScratcher:
+				area.goodDialog()
+			else:
+				area.questDialog()
+		if area.name == "spider":
+			if hasSack:
+				area.goodDialog()
+			else:
+				area.questDialog()
+		if area.name == "squirrel":
+			if hasAcorn:
+				area.goodDialog()
+			else:
+				area.questDialog()
