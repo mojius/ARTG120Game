@@ -24,7 +24,7 @@ const FLOAT_DECEL = 40
 var isFloating = false
 
 #Rock Smash Variables
-const dashSpeed = 700
+const dashSpeed = 550
 const dashLength = 0.1
 var objectToCheck
 
@@ -40,6 +40,7 @@ func _physics_process(delta):
 	if not is_on_floor() && not is_on_wall_only():
 		velocity.y += GRAVITY * delta 
 		NUM_JUMPS = NUM_JUMPS - 1
+	
 	
 	
 	if Input.is_action_just_pressed("Dash") && not is_on_floor():
