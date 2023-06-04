@@ -1,8 +1,5 @@
 res://map.tscn
 res://Player.tscn
-res://Sounds.gd
 res://breakable_rock.tscn
-res://breakable_rock.gd
-res://Player.gd
 res://testScene.tscn
 res://Dash.tscn
