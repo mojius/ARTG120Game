@@ -170,3 +170,7 @@ script = ExtResource("6_cyue1")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sounds"]
 stream = ExtResource("7_qnvg6")
 max_polyphony = 2
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = false
+target_position = Vector2(0, 19)

@@ -26,6 +26,7 @@ var isFloating = false
 #Rock Smash Variables
 const dashSpeed = 700
 const dashLength = 0.1
+var objectToCheck
 
 @onready var dash = $Dash
 
@@ -36,14 +37,19 @@ const dashLength = 0.1
 
 func _physics_process(delta):
 	# Add the gravity.
-	print_debug(isFloating)
 	if not is_on_floor() && not is_on_wall_only():
 		velocity.y += GRAVITY * delta 
 		NUM_JUMPS = NUM_JUMPS - 1
+	
+	
 	if Input.is_action_just_pressed("Dash") && not is_on_floor():
 			dash.startDash(dashLength)
+			$RayCast2D.enabled = true
 			if dash.isDashing():
 				velocity.y = dashSpeed
+				
+		
+		
 	if not is_on_floor():
 		if Input.is_action_pressed("Float"):
 			$PlayerSprite.play("Glide")
@@ -57,6 +63,7 @@ func _physics_process(delta):
 	if is_on_floor():
 		CAN_JUMP = true
 		NUM_JUMPS = MAX_NUM_JUMPS
+		$RayCast2D.enabled = false
 	# Handle Jump.
 	if Input.is_action_just_pressed("Jump"): 
 		if CAN_JUMP == true && NUM_JUMPS > 0:
@@ -117,6 +124,18 @@ func _physics_process(delta):
 			velocity.y += GRAVITY * delta
 	else:
 		velocity.y += GRAVITY * delta
+		
+	
+	
+	
+	if $RayCast2D.is_colliding():
+		print("colliding")
+		objectToCheck = $RayCast2D.get_collider()
+		if objectToCheck.is_in_group("Breakable"):
+			objectToCheck.destroy()
+			velocity.y = -300
+
+
 
 func jump_cut():
 	if velocity.y < -100:

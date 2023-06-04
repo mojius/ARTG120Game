@@ -10,4 +10,4 @@ func _process(_delta):
 		$AudioStreamPlayer.play()
 		playedSound = true
 	elif playedSound == true and $"../PlayerSprite".animation == "Run" and $"../PlayerSprite".frame != walkSoundFrameStart:
-		playedSound =false
+		playedSound = false

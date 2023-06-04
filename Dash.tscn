@@ -6,3 +6,4 @@
 script = ExtResource("1_mw72x")
 
 [node name="DashTimer" type="Timer" parent="."]
+wait_time = 10.0
