@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dpsk87sqm2jr2"]
+[gd_scene load_steps=25 format=3 uid="uid://dpsk87sqm2jr2"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_7hyvu"]
 [ext_resource type="Texture2D" uid="uid://cqmm83l88trel" path="res://gameArt/Fox3.png" id="2_hiqao"]
@@ -139,6 +139,9 @@ scale_curve = SubResource("CurveTexture_3po17")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mgcc"]
 size = Vector2(10, 11)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7soa6"]
+radius = 7.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_7hyvu")
 
@@ -174,3 +177,11 @@ max_polyphony = 2
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = false
 target_position = Vector2(0, 14)
+
+[node name="Item Collect Area" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item Collect Area"]
+shape = SubResource("CircleShape2D_7soa6")
+
+[connection signal="area_entered" from="Item Collect Area" to="." method="_on_item_collect_area_area_entered"]

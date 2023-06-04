@@ -30,6 +30,11 @@ var objectToCheck
 
 @onready var dash = $Dash
 
+#Item Collection Variables
+var hasAcorn = false
+var hasSack = false
+var hasScratcher = false
+
 # BUGS #
 # Fast wall climb
 # If you mess around a wall while floating it sometimes keeps you in a 
@@ -142,3 +147,16 @@ func jump_cut():
 	if velocity.y < -100:
 		velocity.y = -100
 
+
+
+func _on_item_collect_area_area_entered(area):
+	if area.itemName == "acorn":
+		hasAcorn = true
+		area.collect()
+	elif area.itemName == "sack":
+		hasSack = true
+		area.collect()
+	elif area.itemName == "scratcher":
+		hasScratcher = true
+		area.collect()
+		

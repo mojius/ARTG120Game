@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwmw33t5nyv5m"
-path="res://.godot/imported/BackScratcher.png-61880e706fde98dc01d4e3c77a18660f.ctex"
+uid="uid://bifk8fpe13ri1"
+path="res://.godot/imported/EggSack.png-737fbe2b70ba6c908112c8c833408fa5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://BackScratcher.png"
-dest_files=["res://.godot/imported/BackScratcher.png-61880e706fde98dc01d4e3c77a18660f.ctex"]
+source_file="res://gameArt/EggSack.png"
+dest_files=["res://.godot/imported/EggSack.png-737fbe2b70ba6c908112c8c833408fa5.ctex"]
 
 [params]
 

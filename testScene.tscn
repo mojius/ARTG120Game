@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cjjwnscs7kjxg"]
+[gd_scene load_steps=4 format=3 uid="uid://cjjwnscs7kjxg"]
 
 [ext_resource type="PackedScene" uid="uid://dpsk87sqm2jr2" path="res://Player.tscn" id="1_x1ct4"]
 [ext_resource type="PackedScene" uid="uid://c737e2nhelos5" path="res://breakable_rock.tscn" id="2_ux27d"]
+[ext_resource type="PackedScene" uid="uid://csvqkjsu0sda5" path="res://scratcher_item.tscn" id="3_66mci"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,3 +16,6 @@ position = Vector2(0, 162)
 
 [node name="BreakableRock3" parent="." instance=ExtResource("2_ux27d")]
 position = Vector2(0, 121)
+
+[node name="ScratcherItem" parent="." instance=ExtResource("3_66mci")]
+position = Vector2(0, 46)
