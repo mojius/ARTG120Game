@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dpsk87sqm2jr2"]
+[gd_scene load_steps=29 format=3 uid="uid://dpsk87sqm2jr2"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_7hyvu"]
 [ext_resource type="Texture2D" uid="uid://cqmm83l88trel" path="res://gameArt/Fox3.png" id="2_hiqao"]
@@ -139,6 +139,75 @@ scale_curve = SubResource("CurveTexture_3po17")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mgcc"]
 size = Vector2(10, 11)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7soa6"]
+radius = 7.0
+
+[sub_resource type="Animation" id="Animation_o3mnt"]
+resource_name = "reset"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1, 0.5, 0.7, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1), Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"reset"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_hhll8"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hgknl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_p523o"]
+_data = {
+"RESET": SubResource("Animation_hgknl"),
+"default": SubResource("Animation_hhll8"),
+"reset": SubResource("Animation_o3mnt")
+}
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_7hyvu")
 
@@ -158,6 +227,14 @@ randomness = 0.11
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
+[node name="ColorRect" type="ColorRect" parent="Camera2D"]
+z_index = 7
+offset_left = -280.0
+offset_top = -203.0
+offset_right = 387.0
+offset_bottom = 195.0
+color = Color(0, 0, 0, 0)
+
 [node name="Collision" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_7mgcc")
@@ -174,3 +251,18 @@ max_polyphony = 2
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = false
 target_position = Vector2(0, 14)
+
+[node name="Item Collect Area" type="Area2D" parent="."]
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item Collect Area"]
+shape = SubResource("CircleShape2D_7soa6")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Camera2D/ColorRect")
+reset_on_save = false
+libraries = {
+"": SubResource("AnimationLibrary_p523o")
+}
+
+[connection signal="area_entered" from="Item Collect Area" to="." method="_on_item_collect_area_area_entered"]

@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://csvqkjsu0sda5"]
+
+[ext_resource type="Script" path="res://scratcher_item.gd" id="1_pkufg"]
+[ext_resource type="Texture2D" uid="uid://dwmw33t5nyv5m" path="res://gameArt/BackScratcher.png" id="2_l4ak4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2fvub"]
+radius = 8.0
+
+[sub_resource type="Gradient" id="Gradient_frq34"]
+colors = PackedColorArray(1, 0.356863, 1, 1, 0.996078, 0.647059, 0.215686, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_as8yv"]
+gradient = SubResource("Gradient_frq34")
+
+[sub_resource type="Curve" id="Curve_ijx27"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0272727), -5.11049, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_w1pqh"]
+curve = SubResource("Curve_ijx27")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jvww1"]
+emission_shape = 1
+emission_sphere_radius = 9.93
+particle_flag_disable_z = true
+direction = Vector3(1, 1, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_curve = SubResource("CurveTexture_w1pqh")
+color_ramp = SubResource("GradientTexture1D_as8yv")
+
+[node name="ScratcherItem" type="Area2D"]
+monitoring = false
+script = ExtResource("1_pkufg")
+
+[node name="Scratcher" type="Sprite2D" parent="."]
+texture = ExtResource("2_l4ak4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2fvub")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_jvww1")
+texture = ExtResource("2_l4ak4")
+one_shot = true
+speed_scale = 2.17
