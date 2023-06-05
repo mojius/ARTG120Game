@@ -1696,7 +1696,7 @@ texture = ExtResource("8_c4rja")
 position = Vector2(2081, 129)
 
 [node name="Player" parent="." instance=ExtResource("2_6fy2l")]
-position = Vector2(1228, -21)
+position = Vector2(-404, -9)
 
 [node name="ResetPosition" type="Node2D" parent="."]
 position = Vector2(-396, -22)
@@ -1767,7 +1767,7 @@ volume_db = -10.0
 
 [node name="Ambient" type="AudioStreamPlayer" parent="Audio"]
 stream = SubResource("AudioStreamWAV_a05cs")
-volume_db = -20.0
+volume_db = -10.0
 
 [node name="Forest" type="Area2D" parent="Audio"]
 collision_layer = 2
