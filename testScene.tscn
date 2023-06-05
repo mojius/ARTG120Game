@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjjwnscs7kjxg"]
+[gd_scene load_steps=6 format=3 uid="uid://cjjwnscs7kjxg"]
 
 [ext_resource type="PackedScene" uid="uid://dpsk87sqm2jr2" path="res://Player.tscn" id="1_x1ct4"]
 [ext_resource type="PackedScene" uid="uid://c737e2nhelos5" path="res://breakable_rock.tscn" id="2_ux27d"]
+[ext_resource type="PackedScene" uid="uid://dnlebi2b4gk1o" path="res://acorn_item.tscn" id="3_1gcw8"]
 [ext_resource type="PackedScene" uid="uid://csvqkjsu0sda5" path="res://scratcher_item.tscn" id="3_66mci"]
+[ext_resource type="PackedScene" uid="uid://bn61yorajna14" path="res://Bear.tscn" id="4_vf1hi"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -19,3 +21,9 @@ position = Vector2(-32, 80)
 
 [node name="ScratcherItem" parent="." instance=ExtResource("3_66mci")]
 position = Vector2(-42, 56)
+
+[node name="AcornItem" parent="." instance=ExtResource("3_1gcw8")]
+position = Vector2(-42, 36)
+
+[node name="Bear" parent="." instance=ExtResource("4_vf1hi")]
+position = Vector2(31, 48)

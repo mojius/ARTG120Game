@@ -4,8 +4,19 @@ var isItem = false
 var isNPC = true
 var NPCname = "bear"
 
-func collect():
-	$GPUParticles2D.emitting = true
-	$Scratcher.visible = false
-	monitorable = false
+var textDis = ""
 
+func _process(_delta):
+	$RichTextLabel.text = textDis
+	
+	if has_overlapping_areas():
+		$RichTextLabel.visible = true
+
+func goodDialog():
+	textDis = "Thank you for finding my back scratcher little fox"
+	
+
+
+func questDialog():
+	textDis = "I lost my back scratcher somewhere in the cave can you help me "
+	
