@@ -7,6 +7,7 @@ var killbox = false
 var NPCname = "spider"
 
 @onready var textbox = $Textbox
+@onready var player = $Player
 
 var dialog = Callable(self, "introDialog")
 
@@ -40,6 +41,7 @@ func endDialog():
 	textbox.queue_text("MY LEGS, YOU DID IT!!")
 	textbox.queue_text("EVERY SPIDER IN THE FOREST IS IN YOUR DEBT.")
 	textbox.queue_text("C'MERE, BABIES. LET'S ALL GO EAT SOME BOXELDER BUGS.")
+	player.canFloat = true
 
 
 func _on_area_exited(_area):

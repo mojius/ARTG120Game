@@ -7,6 +7,7 @@ var NPCname = "bear"
 var isTalking = false
 
 @onready var textbox = $Textbox
+@onready var player = $Player
 
 var dialog = Callable(self, "introDialog")
 
@@ -40,7 +41,7 @@ func endDialog():
 	textbox.queue_text("BUT SHE'S BUSY WITH THE CUBS, YOU KNOW?")
 	textbox.queue_text("BUT THAT'S LIFE.")
 	textbox.queue_text("THANKS, FOX. THERE'S A FISH IN IT FOR YOU LATER.")	
-	
+	player.canRockSmash = true
 
 func _on_area_exited(_qarea):
 	textbox.text_queue.clear()

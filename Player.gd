@@ -35,9 +35,9 @@ var hasSack = false
 var hasScratcher = false
 
 #can do ability
-var canFloat = true
-var CAN_WALL_JUMP = true
-var canRockSmash = true
+var canFloat = false
+var CAN_WALL_JUMP = false
+var canRockSmash = false
 
 # BUGS #
 # Fast wall climb
