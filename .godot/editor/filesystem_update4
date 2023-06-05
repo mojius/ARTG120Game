@@ -11,3 +11,4 @@ res://kill_box.tscn
 res://scratcher_item.tscn
 res://sack_item.tscn
 res://breakable_rock.tscn
+res://Player.gd
