@@ -35,12 +35,14 @@ func introDialog():
 
 func endDialog():
 	isTalking = true
-	textbox.queue_text("OHHH, THAT'S A RELIEF.")
-	textbox.queue_text("NO MORE ITCHY BACK AT LAST!")
-	textbox.queue_text("MRS. BEAR USED TO SCRATCH MY BACK ENOUGH...")
-	textbox.queue_text("BUT SHE'S BUSY WITH THE CUBS, YOU KNOW?")
-	textbox.queue_text("BUT THAT'S LIFE.")
-	textbox.queue_text("THANKS, FOX. THERE'S A FISH IN IT FOR YOU LATER.")	
+
+	textbox.queue_text("YES!!! YES YES YES YES!!.")
+	textbox.queue_text("THANK YOU A HUNDRED MILLION TIMES!!")
+	textbox.queue_text("LET ME KNOW IF YOU EVER WANT TO CLIMB UP IN TREES...")
+	textbox.queue_text("AND GO RREEEEEEEE!!!")
+	textbox.queue_text("HEHE.")
+	textbox.queue_text("HEHEHE.")	
+
 	
 func _on_area_exited(_area):
 	textbox.text_queue.clear()
