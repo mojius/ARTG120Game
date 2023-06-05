@@ -35,12 +35,14 @@ func introDialog():
 
 func endDialog():
 	isTalking = true
+
 	textbox.queue_text("YES!!! YES YES YES YES!!.")
 	textbox.queue_text("THANK YOU A HUNDRED MILLION TIMES!!")
 	textbox.queue_text("LET ME KNOW IF YOU EVER WANT TO CLIMB UP IN TREES...")
 	textbox.queue_text("AND GO RREEEEEEEE!!!")
 	textbox.queue_text("HEHE.")
 	textbox.queue_text("HEHEHE.")	
+
 	
 func _on_area_exited(_area):
 	textbox.text_queue.clear()
