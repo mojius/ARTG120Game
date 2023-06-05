@@ -8,7 +8,7 @@ var textDis = ""
 
 func _process(_delta):
 	$RichTextLabel.text = textDis
-	
+	$Sprite.play("default")
 	if has_overlapping_areas():
 		$RichTextLabel.visible = true
 
