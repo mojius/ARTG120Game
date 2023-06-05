@@ -15,7 +15,7 @@ func _process(_delta):
 
 func goodDialog():
 	textDis = "Thank you for finding my babies little fox"
-	
+		#$Player.canFloat= true
 
 
 func questDialog():

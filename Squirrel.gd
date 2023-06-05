@@ -15,7 +15,7 @@ func _process(_delta):
 
 func goodDialog():
 	textDis = "Thank you for finding my acorn little fox"
-	
+	#$Player.CAN_WALL_JUMP = true
 
 
 func questDialog():
