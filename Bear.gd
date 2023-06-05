@@ -33,6 +33,7 @@ func introDialog():
 	textbox.queue_text("BUT HERE'S MY SUPER CLAW. GO USE IT TO FIND MY BACK SCRATCHER!")	
 
 func endDialog():
+	isTalking = true
 	textbox.queue_text("OHHH, THAT'S A RELIEF.")
 	textbox.queue_text("NO MORE ITCHY BACK AT LAST!")
 	textbox.queue_text("MRS. BEAR USED TO SCRATCH MY BACK ENOUGH...")
@@ -40,4 +41,6 @@ func endDialog():
 	textbox.queue_text("BUT THAT'S LIFE.")
 	textbox.queue_text("THANKS, FOX. THERE'S A FISH IN IT FOR YOU LATER.")	
 	
-	pass
+
+func _on_area_exited(_qarea):
+	textbox.text_queue.clear()

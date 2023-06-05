@@ -377,7 +377,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2fvub"]
-radius = 35.0
+radius = 75.1665
 
 [node name="Bear" type="Area2D"]
 script = ExtResource("1_w23xk")
@@ -390,3 +390,5 @@ sprite_frames = SubResource("SpriteFrames_sdtn8")
 shape = SubResource("CircleShape2D_2fvub")
 
 [node name="Textbox" parent="." instance=ExtResource("3_3idln")]
+
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
