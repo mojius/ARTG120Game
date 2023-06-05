@@ -1640,7 +1640,7 @@ size = Vector2(270, 158)
 size = Vector2(2845, 278)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp38e"]
-size = Vector2(3087.5, 636.5)
+size = Vector2(3087.5, 468.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6tjr"]
 size = Vector2(3087.5, 636.5)
@@ -1778,7 +1778,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="cave" type="CollisionShape2D" parent="Audio/Cave"]
-position = Vector2(539, 55.5)
+position = Vector2(539, 139.375)
 shape = SubResource("RectangleShape2D_dp38e")
 
 [node name="Canopy" type="Area2D" parent="Audio"]
@@ -1788,7 +1788,7 @@ collision_mask = 2
 monitorable = false
 
 [node name="cave" type="CollisionShape2D" parent="Audio/Canopy"]
-position = Vector2(472.75, -1146.75)
+position = Vector2(471, -1145)
 shape = SubResource("RectangleShape2D_v6tjr")
 
 [connection signal="area_entered" from="Audio/Forest" to="Audio" method="_on_forest_area_entered"]
