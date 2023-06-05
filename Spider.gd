@@ -40,6 +40,7 @@ func talk():
 	textbox.queue_text("IT'S BEEN WARM WEATHER AS OF LATE. VERY STRANGE.")
 	textbox.queue_text("OPEN SEASON ON THE BOXELDER BUGS, AT LEAST.")
 
+
 func questDialog():
 	#textDis = "OH!!"
 	pass
