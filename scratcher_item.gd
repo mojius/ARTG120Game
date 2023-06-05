@@ -3,6 +3,7 @@ extends Area2D
 var isItem = true
 var itemName = "scratcher"
 var isNPC = false
+var killbox = false
 
 func collect():
 	print(itemName)

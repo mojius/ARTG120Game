@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://xmakoftynuco"]
+[gd_scene load_steps=30 format=3 uid="uid://xmakoftynuco"]
 
 [ext_resource type="PackedScene" uid="uid://c737e2nhelos5" path="res://breakable_rock.tscn" id="1_u1f4h"]
 [ext_resource type="PackedScene" uid="uid://dpsk87sqm2jr2" path="res://Player.tscn" id="2_6fy2l"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://3k0m2ghq27r0" path="res://gameArt/Rocks2.png" id="8_ktmr3"]
 [ext_resource type="Texture2D" uid="uid://k1e7gbv3dbos" path="res://gameArt/Mushrooms.png" id="9_r7r34"]
 [ext_resource type="Texture2D" uid="uid://dngvdq33g1n1e" path="res://gameArt/BackgroundCave.png" id="11_it2n8"]
+[ext_resource type="PackedScene" uid="uid://d35jfcwu2oumn" path="res://kill_box.tscn" id="16_nv0gf"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_b13en"]
 tile_data = PackedInt32Array(0, 8, 0, 1, 65544, 0, 65537, 65544, 1, 2, 131080, 0)
@@ -1626,6 +1627,9 @@ sources/8 = SubResource("TileSetAtlasSource_417m3")
 sources/9 = SubResource("TileSetAtlasSource_ccodc")
 pattern_0 = SubResource("TileMapPattern_b13en")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_veh8x"]
+size = Vector2(3021, 220)
+
 [node name="Gameworld" type="Node2D"]
 
 [node name="BreakableRock" parent="." instance=ExtResource("1_u1f4h")]
@@ -1673,3 +1677,13 @@ texture = ExtResource("8_c4rja")
 
 [node name="Player" parent="." instance=ExtResource("2_6fy2l")]
 position = Vector2(-43, -894)
+
+[node name="ResetPosition" type="Node2D" parent="."]
+position = Vector2(-396, -22)
+
+[node name="KillBox" parent="." instance=ExtResource("16_nv0gf")]
+position = Vector2(-855, -563)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KillBox"]
+position = Vector2(1508.5, 88)
+shape = SubResource("RectangleShape2D_veh8x")

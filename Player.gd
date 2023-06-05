@@ -147,7 +147,8 @@ func jump_cut():
 	if velocity.y < -100:
 		velocity.y = -100
 
-
+func reset():
+	position = $"../ResetPosition".position
 
 func _on_item_collect_area_area_entered(area):
 	if area.isItem == true:
@@ -160,7 +161,6 @@ func _on_item_collect_area_area_entered(area):
 		elif area.itemName == "scratcher":
 			hasScratcher = true
 			area.collect()
-			
 	if area.isNPC == true:
 		if area.NPCname == "bear":
 			if hasScratcher:
@@ -177,3 +177,5 @@ func _on_item_collect_area_area_entered(area):
 				area.goodDialog()
 			else:
 				area.questDialog()
+	if area.killbox == true:
+		$AnimationPlayer.play("reset")

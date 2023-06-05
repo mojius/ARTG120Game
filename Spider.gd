@@ -2,6 +2,7 @@ extends Area2D
 
 var isItem = false
 var isNPC = true
+var killbox = false
 var NPCname = "spider"
 
 var textDis = ""

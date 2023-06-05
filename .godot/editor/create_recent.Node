@@ -1,8 +1,11 @@
+CollisionShape2D
+AnimationPlayer
+ColorRect
+Node2D
+Area2D
 AnimatedSprite2D
 RichTextLabel
 GPUParticles2D
-Area2D
-CollisionShape2D
 RayCast2D
 ShapeCast2D
 StaticBody2D
@@ -12,10 +15,8 @@ Node
 AudioStreamPlayer2D
 Timer
 SubViewport
-ColorRect
 RigidBody2D
 PhysicalBone2D
 ParallaxBackground
 ParallaxLayer
 CharacterBody2D
-Node2D

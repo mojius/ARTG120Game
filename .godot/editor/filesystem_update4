@@ -8,3 +8,11 @@ res://Squirrel.tscn
 res://Spider.tscn
 res://Spider.gd
 res://Bear.gd
+res://Player.gd
+res://kill_box.tscn
+res://kill_box.gd
+res://Squirrel.gd
+res://scratcher_item.tscn
+res://scratcher_item.gd
+res://sack_item.tscn
+res://acorn_item.tscn

@@ -3,6 +3,7 @@ extends Area2D
 var isItem = true
 var itemName = "acorn"
 var isNPC = false
+var killbox = false
 
 func collect():
 	var particle = $GPUParticles2D
