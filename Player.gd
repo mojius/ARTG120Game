@@ -17,7 +17,6 @@ var MAX_NUM_JUMPS = 1
 
 # Wall jump variables
 const WALL_SLIDE_SPEED = 20
-var CAN_WALL_JUMP = true
 
 #Float variables
 const FLOAT_DECEL = 40
@@ -35,6 +34,11 @@ var hasAcorn = false
 var hasSack = false
 var hasScratcher = false
 
+#can do ability
+var canFloat = true
+var CAN_WALL_JUMP = true
+var canRockSmash = true
+
 # BUGS #
 # Fast wall climb
 # If you mess around a wall while floating it sometimes keeps you in a 
@@ -48,7 +52,7 @@ func _physics_process(delta):
 	
 	
 	
-	if Input.is_action_just_pressed("Dash") && not is_on_floor():
+	if Input.is_action_just_pressed("Dash") && not is_on_floor() && canRockSmash:
 			dash.startDash(dashLength)
 			$RayCast2D.enabled = true
 			if dash.isDashing():
@@ -57,7 +61,7 @@ func _physics_process(delta):
 		
 		
 	if not is_on_floor():
-		if Input.is_action_pressed("Float"):
+		if Input.is_action_pressed("Float") && canFloat:
 			$PlayerSprite.play("Glide")
 			isFloating = true
 		else:

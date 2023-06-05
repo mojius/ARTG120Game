@@ -15,9 +15,8 @@ func _process(_delta):
 
 func goodDialog():
 	textDis = "Thank you for finding my back scratcher little fox"
-	
+	#$Player.canRockSmash = true
 
 
 func questDialog():
 	textDis = "I lost my back scratcher somewhere in the cave can you help me "
-	
