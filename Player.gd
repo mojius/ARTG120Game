@@ -154,8 +154,6 @@ func jump_cut():
 func reset():
 	position = $"../ResetPosition".position
 	
-func ready():
-	var spider = $"Animals/Spider"
 
 func _on_item_collect_area_area_entered(area):
 	if area.isItem == true:
@@ -174,15 +172,18 @@ func _on_item_collect_area_area_entered(area):
 				area.dialog = Callable(area, "endDialog")
 			else:
 				area.dialog = Callable(area, "introDialog")
+			return
 		if area.NPCname == "spider":
 			if hasSack:
 				area.dialog = Callable(area, "endDialog")
 			else:
 				area.dialog = Callable(area, "introDialog")
+			return
 		if area.NPCname == "squirrel":
 			if hasAcorn:
-				area.goodDialog()
+				area.dialog = Callable(area, "endDialog")
 			else:
-				area.questDialog()
+				area.dialog = Callable(area, "introDialog")
+			return
 	if area.killbox == true:
 		$AnimationPlayer.play("reset")
