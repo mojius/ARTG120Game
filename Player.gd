@@ -169,9 +169,9 @@ func _on_item_collect_area_area_entered(area):
 	if area.isNPC == true:
 		if area.NPCname == "bear":
 			if hasScratcher:
-				area.goodDialog()
+				area.dialog = Callable(area, "endDialog")
 			else:
-				area.questDialog()
+				area.dialog = Callable(area, "introDialog")
 				canRockSmash = true
 		if area.NPCname == "spider":
 			if hasSack:
@@ -182,9 +182,9 @@ func _on_item_collect_area_area_entered(area):
 				print(canFloat)
 		if area.NPCname == "squirrel":
 			if hasAcorn:
-				area.goodDialog()
+				area.dialog = Callable(area, "endDialog")
 			else:
-				area.questDialog()
+				area.dialog = Callable(area, "introDialog")
 				CAN_WALL_JUMP = true
 	if area.killbox == true:
 		$AnimationPlayer.play("reset")

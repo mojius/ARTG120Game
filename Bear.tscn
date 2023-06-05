@@ -389,14 +389,4 @@ sprite_frames = SubResource("SpriteFrames_sdtn8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2fvub")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_left = -42.0
-offset_top = -37.0
-offset_right = 176.0
-offset_bottom = 33.0
-scale = Vector2(0.386206, 0.386206)
-text = "Hello"
-fit_content = true
-scroll_following = true
-
 [node name="Textbox" parent="." instance=ExtResource("3_e8jbq")]
