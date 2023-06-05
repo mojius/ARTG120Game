@@ -81,10 +81,11 @@ func change_state(next_state):
 	current_state = next_state
 	match current_state:
 		State.READY:
-			print("Changing state to: ready")
+			#print("Changing state to: ready")
+			pass
 		State.READING:
-			print("Changing state to: reading")
+			#print("Changing state to: reading")
 			readingSound.play()
 		State.FINISHED:
-			print("Changing state to: finished")
+			#print("Changing state to: finished")
 			endSound.play()
