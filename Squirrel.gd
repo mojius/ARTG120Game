@@ -7,7 +7,6 @@ var NPCname = "squirrel"
 var isTalking = false
 
 @onready var textbox = $Textbox
-@onready var player = $Player
 
 var dialog = Callable(self, "introDialog")
 
@@ -42,7 +41,6 @@ func endDialog():
 	textbox.queue_text("BUT SHE'S BUSY WITH THE CUBS, YOU KNOW?")
 	textbox.queue_text("BUT THAT'S LIFE.")
 	textbox.queue_text("THANKS, FOX. THERE'S A FISH IN IT FOR YOU LATER.")	
-	player.CAN_WALL_JUMP = true
 	
 func _on_area_exited(_area):
 	textbox.text_queue.clear()

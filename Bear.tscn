@@ -1,7 +1,8 @@
-[gd_scene load_steps=57 format=3 uid="uid://bn61yorajna14"]
+[gd_scene load_steps=58 format=3 uid="uid://bn61yorajna14"]
 
 [ext_resource type="Script" path="res://Bear.gd" id="1_w23xk"]
 [ext_resource type="Texture2D" uid="uid://bhvm26f0o8wcr" path="res://gameArt/Bear.png" id="2_keaf1"]
+[ext_resource type="PackedScene" uid="uid://b1slk30u3rl1c" path="res://textbox.tscn" id="3_e8jbq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a7uiw"]
 atlas = ExtResource("2_keaf1")
@@ -397,3 +398,5 @@ scale = Vector2(0.386206, 0.386206)
 text = "Hello"
 fit_content = true
 scroll_following = true
+
+[node name="Textbox" parent="." instance=ExtResource("3_e8jbq")]

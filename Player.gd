@@ -51,7 +51,6 @@ func _physics_process(delta):
 		NUM_JUMPS = NUM_JUMPS - 1
 	
 	
-	
 	if Input.is_action_just_pressed("Dash") && not is_on_floor() && canRockSmash:
 			dash.startDash(dashLength)
 			$RayCast2D.enabled = true
@@ -173,15 +172,19 @@ func _on_item_collect_area_area_entered(area):
 				area.goodDialog()
 			else:
 				area.questDialog()
+				canRockSmash = true
 		if area.NPCname == "spider":
 			if hasSack:
 				area.dialog = Callable(area, "endDialog")
 			else:
 				area.dialog = Callable(area, "introDialog")
+				canFloat = true
+				print(canFloat)
 		if area.NPCname == "squirrel":
 			if hasAcorn:
 				area.goodDialog()
 			else:
 				area.questDialog()
+				CAN_WALL_JUMP = true
 	if area.killbox == true:
 		$AnimationPlayer.play("reset")
