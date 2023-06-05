@@ -253,7 +253,6 @@ enabled = false
 target_position = Vector2(0, 14)
 
 [node name="Item Collect Area" type="Area2D" parent="."]
-monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Item Collect Area"]
 shape = SubResource("CircleShape2D_7soa6")

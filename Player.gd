@@ -149,6 +149,9 @@ func jump_cut():
 
 func reset():
 	position = $"../ResetPosition".position
+	
+func ready():
+	var spider = $"Animals/Spider"
 
 func _on_item_collect_area_area_entered(area):
 	if area.isItem == true:
