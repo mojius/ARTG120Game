@@ -11,3 +11,13 @@ res://kill_box.tscn
 res://scratcher_item.tscn
 res://sack_item.tscn
 res://breakable_rock.tscn
+res://Sounds.gd
+res://Player.gd
+res://Audio.gd
+res://Bear.gd
+res://breakable_rock.gd
+res://Dash.gd
+res://kill_box.gd
+res://scratcher_item.gd
+res://Spider.gd
+res://Squirrel.gd
