@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://xmakoftynuco"]
+[gd_scene load_steps=37 format=3 uid="uid://xmakoftynuco"]
 
 [ext_resource type="PackedScene" uid="uid://c737e2nhelos5" path="res://breakable_rock.tscn" id="1_u1f4h"]
 [ext_resource type="PackedScene" uid="uid://dpsk87sqm2jr2" path="res://Player.tscn" id="2_6fy2l"]
@@ -17,8 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dngvdq33g1n1e" path="res://gameArt/BackgroundCave.png" id="11_it2n8"]
 [ext_resource type="PackedScene" uid="uid://d35jfcwu2oumn" path="res://kill_box.tscn" id="16_nv0gf"]
 [ext_resource type="PackedScene" uid="uid://cuu3g44ul6ko1" path="res://Spider.tscn" id="17_ltqg5"]
-[ext_resource type="PackedScene" uid="uid://bn61yorajna14" path="res://Bear.tscn" id="18_k3awr"]
-[ext_resource type="PackedScene" uid="uid://bl6joqpj2jfyf" path="res://Squirrel.tscn" id="19_3bdhe"]
+[ext_resource type="Script" path="res://Audio.gd" id="18_s413y"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_b13en"]
 tile_data = PackedInt32Array(0, 8, 0, 1, 65544, 0, 65537, 65544, 1, 2, 131080, 0)
@@ -1633,6 +1632,19 @@ pattern_0 = SubResource("TileMapPattern_b13en")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_veh8x"]
 size = Vector2(270, 158)
 
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_4vbhd"]
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_a05cs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mu07r"]
+size = Vector2(2845, 278)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dp38e"]
+size = Vector2(3087.5, 636.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6tjr"]
+size = Vector2(3087.5, 636.5)
+
 [node name="Gameworld" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -1679,7 +1691,7 @@ texture = ExtResource("8_c4rja")
 position = Vector2(2081, 129)
 
 [node name="Player" parent="." instance=ExtResource("2_6fy2l")]
-position = Vector2(1481, -222)
+position = Vector2(1565, -218)
 
 [node name="ResetPosition" type="Node2D" parent="."]
 position = Vector2(-396, -22)
@@ -1714,12 +1726,6 @@ z_index = 425
 z_as_relative = false
 position = Vector2(1512, -184)
 
-[node name="Bear" parent="Animals" instance=ExtResource("18_k3awr")]
-position = Vector2(2169, 112)
-
-[node name="Squirrel" parent="Animals" instance=ExtResource("19_3bdhe")]
-position = Vector2(2134, -24)
-
 [node name="BreakableRock5" parent="." instance=ExtResource("1_u1f4h")]
 position = Vector2(1375, 383)
 
@@ -1746,3 +1752,45 @@ position = Vector2(-177, 383)
 
 [node name="BreakableRock13" parent="." instance=ExtResource("1_u1f4h")]
 position = Vector2(-177, 352)
+
+[node name="Audio" type="Node" parent="."]
+script = ExtResource("18_s413y")
+
+[node name="Music" type="AudioStreamPlayer" parent="Audio"]
+stream = SubResource("AudioStreamWAV_4vbhd")
+
+[node name="Ambient" type="AudioStreamPlayer" parent="Audio"]
+stream = SubResource("AudioStreamWAV_a05cs")
+
+[node name="Forest" type="Area2D" parent="Audio"]
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Audio/Forest"]
+position = Vector2(864.5, -137)
+shape = SubResource("RectangleShape2D_mu07r")
+
+[node name="Cave" type="Area2D" parent="Audio"]
+position = Vector2(258, 258)
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+
+[node name="cave" type="CollisionShape2D" parent="Audio/Cave"]
+position = Vector2(539, 55.5)
+shape = SubResource("RectangleShape2D_dp38e")
+
+[node name="Canopy" type="Area2D" parent="Audio"]
+position = Vector2(258, 258)
+collision_layer = 2
+collision_mask = 2
+monitorable = false
+
+[node name="cave" type="CollisionShape2D" parent="Audio/Canopy"]
+position = Vector2(472.75, -1146.75)
+shape = SubResource("RectangleShape2D_v6tjr")
+
+[connection signal="area_entered" from="Audio/Forest" to="Audio" method="_on_forest_area_entered"]
+[connection signal="area_entered" from="Audio/Cave" to="Audio" method="_on_cave_area_entered"]
+[connection signal="area_entered" from="Audio/Canopy" to="Audio" method="_on_canopy_area_entered"]

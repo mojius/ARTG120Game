@@ -33,7 +33,6 @@ func introDialog():
 	textbox.queue_text("OPEN SEASON ON THE BOXELDER BUGS, AT LEAST.")
 	textbox.queue_text("GO WEST AND FIND MY BABIES.")
 	textbox.queue_text("TAKE THE PARACHUTE TO HELP YOU FIND THEM.")
-	textbox.queue_text("I WOVE IT JUST FOR YOU, FOXY!")
 	textbox.queue_text("PRESS CTRL TO GLIDE.")
 
 func endDialog():

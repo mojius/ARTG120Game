@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://dpsk87sqm2jr2"]
+[gd_scene load_steps=32 format=3 uid="uid://dpsk87sqm2jr2"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_7hyvu"]
 [ext_resource type="Texture2D" uid="uid://cqmm83l88trel" path="res://gameArt/Fox3.png" id="2_hiqao"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://ci8ctqx5oavjb" path="res://gameArt/RunParticle.png" id="5_ess2i"]
 [ext_resource type="Script" path="res://Sounds.gd" id="6_cyue1"]
 [ext_resource type="PackedScene" uid="uid://cmihernf74gvh" path="res://Dash.tscn" id="6_ws04n"]
-[ext_resource type="AudioStream" uid="uid://by1ycbslwgior" path="res://gameAudio/DirtWalk.wav" id="7_qnvg6"]
+[ext_resource type="AudioStream" uid="uid://bpk2hysc45tun" path="res://gameAudio/DirtWalk.wav" id="7_qnvg6"]
+[ext_resource type="AudioStream" uid="uid://bqu13p7gwidl2" path="res://gameAudio/Glide_woosh.wav" id="9_83a3v"]
+[ext_resource type="AudioStream" uid="uid://cckpkyxcq8k1j" path="res://gameAudio/Jump_Woosh.wav" id="10_qhgma"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oy8pl"]
 atlas = ExtResource("2_ugdev")
@@ -139,6 +141,8 @@ scale_curve = SubResource("CurveTexture_3po17")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7mgcc"]
 size = Vector2(10, 11)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_je0wn"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_7soa6"]
 radius = 7.0
 
@@ -213,8 +217,7 @@ script = ExtResource("1_7hyvu")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8wifw")
-animation = &"Run"
-frame_progress = 0.355943
+animation = &"Glide"
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="PlayerSprite"]
 position = Vector2(-2, 7)
@@ -248,9 +251,22 @@ script = ExtResource("6_cyue1")
 stream = ExtResource("7_qnvg6")
 max_polyphony = 2
 
+[node name="GlidingSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("9_83a3v")
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("10_qhgma")
+
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = false
 target_position = Vector2(0, 14)
+
+[node name="ZoneDetect" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZoneDetect"]
+shape = SubResource("CircleShape2D_je0wn")
 
 [node name="Item Collect Area" type="Area2D" parent="."]
 

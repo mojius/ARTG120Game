@@ -77,6 +77,7 @@ func _physics_process(delta):
 	# Handle Jump.
 	if Input.is_action_just_pressed("Jump"): 
 		if CAN_JUMP == true && NUM_JUMPS > 0:
+			$Sounds/JumpSound.play()
 			velocity.y = -JUMP_VELOCITY
 			NUM_JUMPS = NUM_JUMPS - 1
 			if is_on_wall() && CAN_WALL_JUMP && Input.is_action_pressed("Right"):
@@ -136,8 +137,6 @@ func _physics_process(delta):
 		velocity.y += GRAVITY * delta
 		
 	
-	
-	
 	if $RayCast2D.is_colliding():
 		print("colliding")
 		objectToCheck = $RayCast2D.get_collider()
@@ -154,6 +153,8 @@ func jump_cut():
 func reset():
 	position = $"../ResetPosition".position
 	
+func ready():
+	var spider = $"Animals/Spider"
 
 func _on_item_collect_area_area_entered(area):
 	if area.isItem == true:
@@ -169,21 +170,18 @@ func _on_item_collect_area_area_entered(area):
 	if area.isNPC == true:
 		if area.NPCname == "bear":
 			if hasScratcher:
-				area.dialog = Callable(area, "endDialog")
+				area.goodDialog()
 			else:
-				area.dialog = Callable(area, "introDialog")
-			return
+				area.questDialog()
 		if area.NPCname == "spider":
 			if hasSack:
 				area.dialog = Callable(area, "endDialog")
 			else:
 				area.dialog = Callable(area, "introDialog")
-			return
 		if area.NPCname == "squirrel":
 			if hasAcorn:
-				area.dialog = Callable(area, "endDialog")
+				area.goodDialog()
 			else:
-				area.dialog = Callable(area, "introDialog")
-			return
+				area.questDialog()
 	if area.killbox == true:
 		$AnimationPlayer.play("reset")
