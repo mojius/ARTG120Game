@@ -1628,7 +1628,7 @@ sources/9 = SubResource("TileSetAtlasSource_ccodc")
 pattern_0 = SubResource("TileMapPattern_b13en")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_veh8x"]
-size = Vector2(3021, 220)
+size = Vector2(270, 158)
 
 [node name="Gameworld" type="Node2D"]
 
@@ -1676,10 +1676,17 @@ texture = ExtResource("8_c4rja")
 position = Vector2(2081, 129)
 
 [node name="Player" parent="." instance=ExtResource("2_6fy2l")]
-position = Vector2(23, 225)
+position = Vector2(1565, -218)
 
 [node name="ResetPosition" type="Node2D" parent="."]
 position = Vector2(-396, -22)
+
+[node name="KillBox2" parent="." instance=ExtResource("16_nv0gf")]
+position = Vector2(-1710, -1126)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="KillBox2"]
+position = Vector2(3422, 1202)
+shape = SubResource("RectangleShape2D_veh8x")
 
 [node name="KillBox" parent="." instance=ExtResource("16_nv0gf")]
 position = Vector2(-855, -563)
