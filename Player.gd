@@ -171,9 +171,9 @@ func _on_item_collect_area_area_entered(area):
 	if area.isNPC == true:
 		if area.NPCname == "bear":
 			if hasScratcher:
-				area.goodDialog()
+				area.dialog = Callable(area, "endDialog")
 			else:
-				area.questDialog()
+				area.dialog = Callable(area, "introDialog")
 		if area.NPCname == "spider":
 			if hasSack:
 				area.dialog = Callable(area, "endDialog")

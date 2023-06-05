@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuu3g44ul6ko1"]
+[gd_scene load_steps=5 format=3 uid="uid://cuu3g44ul6ko1"]
 
 [ext_resource type="Script" path="res://Spider.gd" id="1_1nhrb"]
 [ext_resource type="Texture2D" uid="uid://e7xliqtjktlr" path="res://gameArt/Spider.png" id="2_a1a76"]
-[ext_resource type="FontFile" uid="uid://fyhbph4dwu04" path="res://gameArt/nintendo-nes-font.ttf" id="3_febyw"]
 [ext_resource type="PackedScene" uid="uid://b1slk30u3rl1c" path="res://textbox.tscn" id="4_p2k10"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2fvub"]
@@ -17,19 +16,6 @@ texture = ExtResource("2_a1a76")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_2fvub")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-visible = false
-offset_left = -9.0
-offset_top = -27.0
-offset_right = 124.0
-offset_bottom = 17.0
-scale = Vector2(0.386206, 0.386206)
-theme_override_fonts/normal_font = ExtResource("3_febyw")
-theme_override_font_sizes/normal_font_size = 16
-text = "HELP!! "
-fit_content = true
-scroll_following = true
 
 [node name="Textbox" parent="." instance=ExtResource("4_p2k10")]
 
