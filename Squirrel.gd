@@ -35,12 +35,12 @@ func introDialog():
 
 func endDialog():
 	isTalking = true
-	textbox.queue_text("OHHH, THAT'S A RELIEF.")
-	textbox.queue_text("NO MORE ITCHY BACK AT LAST!")
-	textbox.queue_text("MRS. BEAR USED TO SCRATCH MY BACK ENOUGH...")
-	textbox.queue_text("BUT SHE'S BUSY WITH THE CUBS, YOU KNOW?")
-	textbox.queue_text("BUT THAT'S LIFE.")
-	textbox.queue_text("THANKS, FOX. THERE'S A FISH IN IT FOR YOU LATER.")	
+	textbox.queue_text("YIPPEE!!!.")
+	textbox.queue_text("OH, YIPPEEE YIP YIPPEE!!!")
+	textbox.queue_text("YAY YAY YAY!! MY ACORN IS BACK.")
+	textbox.queue_text("FOXY! FOXY! COME OVER! COME OVER FOR DINNER!!")
+	textbox.queue_text("MEET MY MATE, MY MATE!!")
+	textbox.queue_text("AND SQUIRREL JRS. ONE, TWO, THREE, FOUR...")	
 	
 func _on_area_exited(_area):
 	textbox.text_queue.clear()

@@ -16,6 +16,12 @@ func _on_forest_area_entered(area):
 	$Music.play()
 	$Ambient.play()
 
+func _process(_delta):
+	if (!$Music.playing):
+		$Music.play()
+	if (!$Ambient.playing):
+		$Ambient.play()
+
 
 func _on_cave_area_entered(area):
 	$Music.stream = CaveMusic
